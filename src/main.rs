@@ -7,84 +7,41 @@ use std::num::ParseIntError;
 
 use rand::Rng;
 fn main() {
-    
-    // maths operation today we are going to read
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let mut index = 0;
+    let mut arr2: [i32; 9] =[0,0,0,0,0,0,0,0,0];
 
-    //decimal percision
-    let num_1: f32 = 1.1111111111;
-    let num_2: f64 = 1.1111111111;
-    println!("f32: {} ", num_1 + 0.1111111111);
-    println!("f64: {} ", num_2 + 0.1111111111);
+    // loop { 
+    //     if index == arr.len() {
+    //         println!("Quitting...");
+    //         break;
+    //     }  
+    //     if arr[index] % 2 == 0 {
+    //         println!("even number found: {} ", arr[index]);
+    //         index+=1;
+    //         continue;
+    //     }
+    //     else {
+    //         println!("odd number found: {} ", arr[index]);
+    //         index+=1;
+    //         continue;
+    //     }
+    // }
 
-    //arithmatic operations;
+    // while index<arr.len() {
+    //     println!("value : {}", arr[index]);
+    //     index+=1;
+    // }
 
-    let mut num3: i32 = 12;
-    let num4: i32 = 5;
+    // for val in arr.iter(){
+    //     println!("value : {}", val);
+    // }
 
-    println!("12 + 5 = {}", num3 + num4);
-    println!("12 - 5 = {}", num3 - num4);
-    println!("12 * 5 = {}", num3 * num4);
-    println!("12 / 5 = {}", num3 / num4);
-    println!("12 % 5 = {}", num3 % num4);
-    num3 += 1;
-    println!("num3+= : {}", num3);
-    num3 *= 2;
-    println!("num3*= : {}", num3);
-    num3 /= 2;
-    println!("num3/= : {}", num3);
-    num3 -= 5;
-    println!("num3-= : {}", num3);
-    num3 %= 5;
-    println!("num3%= : {}", num3);
+    //tuple 
+    let my_tuple:(i32, String, f32, i32)  = (32, "SAndy".to_string(), 3.2, 2);
+    println!("Value in my tuple :{}", my_tuple.1);
 
-    //random number
-    let rand = rand::thread_rng().gen_range(1..101);
-    println!("Generated random number: {} ", rand);
+    let (v1, v2, v3, v4) = my_tuple;
+    println!("tuple values {} {} {} {}", v1,v2, v3, v4);
 
-    
-
-    //conditionals
-    let mut age = -101;
-
-    /*
-    if (age > 16) && (age < 14) {
-        println!("Congrats you can come into party.");
-    } else if (age > 19) || (age > 17) {
-        println!("please don't come without gifts");
-    } else if age == 12 {
-        println!("sorry you can't enter");
-    } else {
-        println!("go home buddy");
-    }
-     */
-
-    //ternary equivalent
-    /*
-    let mut is_Adult:bool = if age>=18 {
-        true
-    }else {
-        false
-    };
-    println!(" is it an adult : {}", is_Adult)
-    */
-
-    /*
-    //match statement
-
-    match age {
-        1..=17 => println!("You are bw 1,18"),
-        18 | 20 => println!("you are an adult"),
-        18..=50 => println!("you are a parent"),
-        18..=i32::MAX => println!("I dont know"),
-        _ => println!("whatever"),
-    }
-    */
-
-    // match with cmp and ordering
-    let voting_age = 18;
-    match age.cmp(&voting_age) {
-        Ordering::Less => println!("you can't vote"),
-        Ordering::Greater => println!("you can vote"),
-        Ordering::Equal => println!("you can start voting"),
-    }
 }
