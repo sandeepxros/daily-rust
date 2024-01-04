@@ -7,41 +7,67 @@ use std::num::ParseIntError;
 
 use rand::Rng;
 fn main() {
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let mut index = 0;
-    let mut arr2: [i32; 9] =[0,0,0,0,0,0,0,0,0];
+    //casting
 
-    // loop { 
-    //     if index == arr.len() {
-    //         println!("Quitting...");
-    //         break;
-    //     }  
-    //     if arr[index] % 2 == 0 {
-    //         println!("even number found: {} ", arr[index]);
-    //         index+=1;
-    //         continue;
-    //     }
-    //     else {
-    //         println!("odd number found: {} ", arr[index]);
-    //         index+=1;
-    //         continue;
-    //     }
-    // }
+    // let num: u8 = 9;
+    // let num2: u8 = 99;
+    // let num3: u32 = (num as u32) + (num2 as u32);
 
-    // while index<arr.len() {
-    //     println!("value : {}", arr[index]);
-    //     index+=1;
-    // }
+    // let str = "sand";
 
-    // for val in arr.iter(){
-    //     println!("value : {}", val);
-    // }
+    // let st: String = String::from("hola");
 
-    //tuple 
-    let my_tuple:(i32, String, f32, i32)  = (32, "SAndy".to_string(), 3.2, 2);
-    println!("Value in my tuple :{}", my_tuple.1);
+    // println!("{}", add);
 
-    let (v1, v2, v3, v4) = my_tuple;
-    println!("tuple values {} {} {} {}", v1,v2, v3, v4);
+    //ENUMS
+    enum Day {
+        Sun,
+        Mon,
+        Tue,
+        Wed,
+        Thu,
+        Fri,
+        Sat,
+    }
+
+    fn todo(data: &str) -> String {
+        let mut st = String::from( "hola nice ");
+        st.push_str(data);
+        st.push_str("today");
+        return st;
+    }
+
+    impl Day {
+        fn guess_me(&self) -> String {
+            match self {
+                Day::Sun => todo("weekend"),
+                Day::Mon => todo("Monday"),
+                Day::Tue => todo("Tuesday"),
+                Day::Wed => todo("Wednesday"),
+                Day::Thu => todo("Thursday"),
+                Day::Fri => todo("Friday"),
+                Day::Sat => todo("weekend"),
+                _ => todo("de nada"),
+            }
+        }
+    }
+
+    
+    //vectors
+    let vec:Vec<i32> = Vec::new();
+    let mut vec2 = vec![1,2,3,4];
+    vec2.push(23);
+    for v in &vec2{
+        print!("{},", v)
+    }
+    for i in &mut vec2{
+        *i *=2 ;
+    }
+    println!("");
+    for v in &vec2{
+        print!("{},", v);
+    }
+
+
 
 }
