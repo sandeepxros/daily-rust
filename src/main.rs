@@ -9,7 +9,6 @@ fn main() {
     io::stdin()
         .read_line(&mut name)
         .expect("You dind't enterd your name");
-
     println!("Hello, {},  {}", name.trim_end(), greeting);
     
 }
